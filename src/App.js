@@ -20,7 +20,7 @@ function App() {
 		const consultarAPI = async () => {
 			if (consultar) {
         const appId = 'cb8802884be1fc93472a3e3ed0da7714';
-			const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+			const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
 
 			const respuesta = await fetch(url);
 			const resultado = await respuesta.json();
@@ -39,6 +39,7 @@ function App() {
       }
 		};
 		consultarAPI();
+		//esLint-disable-next-line
 	}, [consultar, ciudad, pais,resultado, guardarBusqueda, guardarConsultar, guardarError, error]);
 
   //cargando condicional de componentes
